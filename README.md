@@ -21,4 +21,26 @@ adb shell idmap2 dump --idmap-path 文件路径+名称
 
 结果：0x01040151 -> 0x01050001 string/common_setting
 
-
+原理：
+* <pre>
+ *         Android framework
+ *            |         ^
+ *      . . . | . . . . | . . . .
+ *     .      |         |       .
+ *     .    AIDL,   broadcasts  .
+ *     .   intents      |       .
+ *     .      |         |       . . . . . . . . . . . .
+ *     .      v         |       .                     .
+ *     .  OverlayManagerService . OverlayManagerTests .
+ *     .                  \     .     /               .
+ *     . (1)               \    .    /            (3) .
+ *      . . . . . . . . . . \ . . . / . . . . . . . . .
+ *     .                     \     /              .
+ *     . (2)                  \   /               .
+ *     .           OverlayManagerServiceImpl      .
+ *     .                  |            |          .
+ *     .                  |            |          .
+ *     . OverlayManagerSettings     IdmapManager  .
+ *     .                                          .
+ *     . . . .  . . . . . . . . . . . . . . . . . .
+ * </pre>
