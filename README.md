@@ -2,10 +2,14 @@
 RRO实例应用
 
 修改方法：
-1、修改AndroidManifest.xml中的android:targetPackage属性，修改为需要被rro的应用的包名；
-2、添加需要被rro的资源名称到values的资源文件中，如strings.xml的<string name="common_setting">helloWorld</string>；
-3、当前RRO应用和被RRO的应用签名需要一致；
-4、可能安装的时候还需要将apkpush到vendor/overlay里面安装。
+ 1.修改AndroidManifest.xml中的android:targetPackage属性，修改为需要被rro的应用的包名；
+ 
+ 2.添加需要被rro的资源名称到values的资源文件中，如strings.xml的<string name="common_setting">helloWorld</string>；
+ 
+ 3.当前RRO应用和被RRO的应用签名需要一致；
+ 
+ 4.可能安装的时候还需要将apkpush到vendor/overlay里面安装。
+ 
 
 命令：
 启用资源包
