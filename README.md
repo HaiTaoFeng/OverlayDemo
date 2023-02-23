@@ -8,7 +8,7 @@ RRO实例应用
  
  3.当前RRO应用和被RRO的应用签名需要一致；
  
- 4.可能安装的时候还需要将apkpush到vendor/overlay里面安装。
+ 4.将apk push到vendor/overlay(没有则创建)里面安装。
  
 
 命令：
